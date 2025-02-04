@@ -6,6 +6,7 @@
 
 질문: 특정 사용자가 처리해야 할 결재 건을 나열하는 query를 작성
 답안:
+```
 SELECT
 payment_requests.id AS payment_request_id,
 payment_requests.amount,
@@ -24,3 +25,4 @@ users ON payment_requests.req_user_id = users.id -- 요청자 정보
 WHERE
 payment_approvals.approver_id = ?
 AND payment_approvals.approval_status = 'pending'
+```
